@@ -97,6 +97,10 @@ class User {
     }
 
     getRecentNotifications()
+    getFWStats()
+    getCharacter()
+    getBuddies()
+    getStandings()
 
   }
 
