@@ -4,7 +4,7 @@
 
   /////
   // Modules to Design
-  // - Required Input
+  //  - Required Input
   //////////
 
   /////
@@ -19,92 +19,92 @@
 
   /////
   // Calendar Events
-  // -
+  //  -
   //////////
 
   /////
   // Character Sheet
-  // - characterID
+  //  - characterID
   //////////
 
   /////
   // Online Contacts
-  // -
+  //  -
   //////////
 
   /////
   // Contracts per Type
-  // -
+  //  -
   //////////
 
   /////
   // Contract Bids
-  // -
+  //  -
   //////////
 
   /////
   // FW Stats
-  // -
+  //  -
   //////////
 
   /////
   // Industry Jobs
-  // -
+  //  -
   //////////
 
   /////
   // Singular Mailing List
-  // -
+  //  -
   //////////
 
   /////
   // Market Orders
-  // -
+  //  -
   //////////
 
   /////
   // Recent Notifications
-  // -
+  //  -
   //////////
 
   /////
   // Research
-  // -
+  //  -
   //////////
 
   /////
   // Skill Queue
-  // -
+  //  -
   //////////
 
   /////
-  //Standings
-  // -
+  // Standings
+  //  -
   //////////
 
   /////
   // Wallet Journal
-  // -
+  //  -
   //////////
 
   /////
   // Wallet Transactions
-  // -
+  //  -
   //////////
 
   /////
   // Server Status
-  // -
+  //  -
   //////////
 
   /////
   // Recent Mail (Not Mailing List)
-  // -
+  //  -
   //////////
 
   /////
   // Send Mail
-  // -
+  //  -
   //////////
 
 ?>
