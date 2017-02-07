@@ -74,5 +74,21 @@ function getAccountBalance($charID) {
   return $balance;
 }
 
+function getAvatarLink($charID) {
+
+  //$xml = makeRequest('char', 'AccountBalance');
+
+  //$url = "https://api.eveonline.com/char/AccountBalance.xml.aspx?keyID=5971947&vCode=XmjJCTU6qinGmWHPQyJd3uYQb9ONGBUna2H5wtT94JdKXldgrlwQXEnwm2jfaWdC&characterID=$charID";
+  //$xml = simplexml_load_file($url);
+
+  //$balance = $xml->result->rowset->row[0]['balance'];
+
+  //debugDump($xml->result->rowset);
+
+  $link = "http://image.eveonline.com" . "/Character/" . $charID . "_128.jpg";
+
+  return $link;
+}
+
 
 ?>
