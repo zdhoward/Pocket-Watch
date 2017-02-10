@@ -25,17 +25,19 @@
   echo ("<p>------- USER END -------</p>");
   */
 
-  /*
+  
   echo ("<p>---------- API ----------</p>");
 
   $api = new API();
 
   echo ("<p>------- API END ------</p>");
-  */
 
+
+  /*
   echo ("<p>------ CHARACTER ------</p>");
 
-  //$character = new Character();
+  $character = new Character();
 
   echo ("<p>--- CHARACTER END ---</p>");
+  */
 ?>
