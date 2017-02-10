@@ -6,6 +6,7 @@ class User {
 	var $APIs;
 
 	function __construct() {
+		//TODO Login User to secure db and retrieve API info
 		//TODO Load keyID from db
 		//TODO Load vCode from db
 		$this->keyID = "5971947";

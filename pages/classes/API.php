@@ -10,19 +10,16 @@
 		function __construct($keyID, $vCode) {
 			echo ("<p>Initializing API</p>");
 			if ( $this->sync() ) {
-	      // TODO Load API info from secure method
+
 	      $this->keyID = $keyID;
 	      $this->vCode = $vCode;
 
 	      $this->URItarget = "https://api.eveonline.com";
 
-	      // TODO Load Characters from API an sync them
 				$characters = $this->getCharacters(); //new Character();
 
-				//debugDump($characters);
 
 				foreach ($characters->row as $character) {
-					//debugDump($character);
 					$temp = new Character($this->keyID, $this->vCode, $character);
 					array_push($this->characters, $temp);
 				}
