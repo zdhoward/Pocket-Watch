@@ -7,15 +7,17 @@
   //$player = refreshAPI();
 
   // SERVER TESTING
-  /*
+
   echo ("<p>--------- SERVER ---------</p>");
 
   $server = new Server();
+  echo ("<p>Status: $server->status</p>");
+  echo ("<p>Players: $server->playerCount</p>");
   //debugDump ($server);
   //echo($server->playerCount);
 
   echo ("<p>----- SERVER END ------</p>");
-  */
+
 
 
   echo ("<p>---------- USER ----------</p>");

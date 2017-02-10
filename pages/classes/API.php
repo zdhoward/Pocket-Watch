@@ -18,7 +18,6 @@
 
 				$characters = $this->getCharacters(); //new Character();
 
-
 				foreach ($characters->row as $character) {
 					$temp = new Character($this->keyID, $this->vCode, $character);
 					array_push($this->characters, $temp);
@@ -65,7 +64,7 @@
 
 	    //$URItarget = "https://api.eveonline.com";
 
-	    $xml = simplexml_load_file("$this->URItarget/server/ServerStatus.xml.aspx");
+	    //$xml = simplexml_load_file("$this->URItarget/server/ServerStatus.xml.aspx");
 
 	    return $xml;
 	  }

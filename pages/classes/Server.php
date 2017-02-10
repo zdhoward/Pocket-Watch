@@ -13,7 +13,7 @@ class Server {
 	}
 
 	function sync() {
-    echo ("Synchronizing...");
+    echo ("<p>Synchronizing...</p>");
 
     $xml = $this->request();
 
