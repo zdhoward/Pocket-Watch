@@ -25,11 +25,9 @@ class Character {
 
 	var $skillQueue;        // LOADED
 
-	var $FWStats;           // SKIPPED
-
 	var $characterSheet;    // LOADED
 
-	var $buddies;           // SKIPPED
+	var $watchList;         // SKIPPED
 
 	var $standings;         // LOADED
 
@@ -85,15 +83,11 @@ class Character {
 		$this->factionLogo = "<img alt='$this->factionName' src=http://image.eveonline.com" . "/Faction/" . $character['factionID'] . "_128.png>";
 
 		if ( $this->sync() ) {
-      //$this->keyID = "5971947";
-      //$this->vCode = "XmjJCTU6qinGmWHPQyJd3uYQb9ONGBUna2H5wtT94JdKXldgrlwQXEnwm2jfaWdC";
-
-      //$this->URItarget = "https://api.eveonline.com";
 
       // TODO Load Characters from API an sync them
 
 			// Sync Successful
-			debugDump($this);
+			//debugDump($this);
       echo ("<p>$this->name Initialized</p>");
 		} else {
       echo ("<p>Character Initialization Failed<p>");
@@ -106,11 +100,7 @@ class Character {
 
 		$this->skillQueue = $this->getSkillQueue();
 
-		//$this->FWStats = $this->getFWStats(); // SKIPPED
-
 		$this->characterSheet = $this->getCharacterSheet();
-
-		// $buddies;
 
 		$this->standings = $this->getStandings();
 
@@ -135,8 +125,16 @@ class Character {
 
 		$this->marketOrders = $this->getMarketOrders();
 
+		$this->contacts = $this->getContacts();
+
+		$this->watchList = $this->getWatchList();
+
 		return true;
 	}
+
+	/////
+	// API ACCESSORS
+	//////////
 
 	function getSkillQueue() {
 
@@ -145,17 +143,6 @@ class Character {
 		$skillQueue = $xml->result->rowset;
 
 		return $skillQueue;
-	}
-
-	function getFWStats() {
-
-		$xml = simplexml_load_file("$this->URItarget/char/FacWarStats.xml.aspx?keyID=$this->keyID&vCode=$this->vCode&characterID=$this->ID");
-
-		$FWStats = $xml;
-
-		//debugDump($FWStats);
-
-		return $FWStats;
 	}
 
 	function getCharacterSheet() {
@@ -282,6 +269,28 @@ class Character {
 		$orders = $xml->result->rowset;
 
 		return $orders;
+	}
+
+	function getContacts() {
+		$xml = simplexml_load_file("$this->URItarget/char/ContactList.xml.aspx?keyID=$this->keyID&vCode=$this->vCode&characterID=$this->ID");
+
+		$contacts = $xml->result->rowset;
+
+		return $contacts;
+	}
+
+	function getWatchList() {
+		$contacts = $this->getContacts();
+
+		$buddies = array();
+
+		foreach ($contacts->row as $contact) {
+			if ($contact['inWatchlist'] == 'True') {
+				array_push($buddies, $contact);
+			}
+		}
+
+		return $buddies;
 	}
 };
 ?>

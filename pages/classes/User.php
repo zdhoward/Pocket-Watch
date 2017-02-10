@@ -8,6 +8,11 @@ class User {
 	function __construct() {
 		//TODO Load keyID from db
 		//TODO Load vCode from db
+		$this->keyID = "5971947";
+		$this->vCode = "XmjJCTU6qinGmWHPQyJd3uYQb9ONGBUna2H5wtT94JdKXldgrlwQXEnwm2jfaWdC";
+
+		$api = new API($this->keyID, $this->vCode);
+
     echo ("User Initialized");
 	}
 

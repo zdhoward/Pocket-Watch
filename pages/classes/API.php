@@ -7,12 +7,12 @@
 
 	  var $characters;
 
-		function __construct() {
+		function __construct($keyID, $vCode) {
 			echo ("<p>Initializing API</p>");
 			if ( $this->sync() ) {
 	      // TODO Load API info from secure method
-	      $this->keyID = "5971947";
-	      $this->vCode = "XmjJCTU6qinGmWHPQyJd3uYQb9ONGBUna2H5wtT94JdKXldgrlwQXEnwm2jfaWdC";
+	      $this->keyID = $keyID;
+	      $this->vCode = $vCode;
 
 	      $this->URItarget = "https://api.eveonline.com";
 

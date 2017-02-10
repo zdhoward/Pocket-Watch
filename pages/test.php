@@ -17,21 +17,21 @@
   echo ("<p>----- SERVER END ------</p>");
   */
 
-  /*
+
   echo ("<p>---------- USER ----------</p>");
 
   $user = new User();
 
   echo ("<p>------- USER END -------</p>");
-  */
 
-  
+
+  /*
   echo ("<p>---------- API ----------</p>");
 
   $api = new API();
 
   echo ("<p>------- API END ------</p>");
-
+  */
 
   /*
   echo ("<p>------ CHARACTER ------</p>");
