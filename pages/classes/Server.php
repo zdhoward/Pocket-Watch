@@ -6,14 +6,14 @@ class Server {
 	function __construct() {
 		if ( $this->sync() ) {
 			// Sync Successful
-      echo ("Success");
+      //echo ("Success");
 		} else {
-      echo ("Failed");
+      //echo ("Failed");
     }
 	}
 
 	function sync() {
-    echo ("<p>Synchronizing...</p>");
+    //echo ("<p>Synchronizing...</p>");
 
     $xml = $this->request();
 

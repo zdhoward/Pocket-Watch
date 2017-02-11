@@ -3,18 +3,24 @@ class User {
 
 	var $mainCharacterID;
 	var $accessMask; // Check if you can query something before you do it
-	var $APIs;
+	var $APIs = array();
 
 	function __construct() {
 		//TODO Login User to secure db and retrieve API info
 		//TODO Load keyID from db
 		//TODO Load vCode from db
-		$this->keyID = "5971947";
-		$this->vCode = "XmjJCTU6qinGmWHPQyJd3uYQb9ONGBUna2H5wtT94JdKXldgrlwQXEnwm2jfaWdC";
+		//$this->keyID = ;
+		//$this->vCode = ;
 
-		$api = new API($this->keyID, $this->vCode);
+		$api = new API("5971947", "XmjJCTU6qinGmWHPQyJd3uYQb9ONGBUna2H5wtT94JdKXldgrlwQXEnwm2jfaWdC");
+		array_push($this->APIs, $api);
 
-    echo ("User Initialized");
+		$api = new API("5988042", "Ri5XU6Ig5OW1g0nP2OgblBSrybdQJ2LImXqj1I55TjNOKNp5TWEyXTr5YyDva3It");
+		array_push($this->APIs, $api);
+
+		//debugDump($APIs);
+
+    //echo ("User Initialized");
 	}
 
 	// This should be outside of User object, but having a couple objects of this Type

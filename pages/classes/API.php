@@ -8,7 +8,7 @@
 	  var $characters;
 
 		function __construct($keyID, $vCode) {
-			echo ("<p>Initializing API</p>");
+			//echo ("<p>Initializing API</p>");
 			if ( $this->sync() ) {
 
 	      $this->keyID = $keyID;
@@ -16,17 +16,17 @@
 
 	      $this->URItarget = "https://api.eveonline.com";
 
-				$characters = $this->getCharacters(); //new Character();
+				$this->characters = $this->getCharacters(); //new Character();
 
-				foreach ($characters->row as $character) {
+				foreach ($this->characters->row as $character) {
 					$temp = new Character($this->keyID, $this->vCode, $character);
 					array_push($this->characters, $temp);
 				}
 
 				// Sync Successful
-	      echo ("<p>API Initialized</p>");
+	      //echo ("<p>API Initialized</p>");
 			} else {
-	      echo ("<p>API Initialization Failed</p>");
+	      //echo ("<p>API Initialization Failed</p>");
 	    }
 		}
 
@@ -46,7 +46,7 @@
 		// SYNC + REQUEST
 
 		function sync() {
-	    echo ("<p>Synchronizing...</p>");
+	    //echo ("<p>Synchronizing...</p>");
 
 	    $xml = $this->request();
 

@@ -55,7 +55,7 @@ class Character {
 	// CONSTRUCT
 	function __construct($keyID, $vCode, $character) {
 		//debugDump($character);
-		echo ("<p>Initializing Character</p>");
+		//echo ("<p>Initializing Character</p>");
 
 		//LOAD Character
 		// API Key
@@ -88,46 +88,46 @@ class Character {
 
 			// Sync Successful
 			//debugDump($this);
-      echo ("<p>$this->name Initialized</p>");
+      //echo ("<p>$this->name Initialized</p>");
 		} else {
-      echo ("<p>Character Initialization Failed<p>");
+      //echo ("<p>Character Initialization Failed<p>");
     }
 	}
 
 	// SYNC
 	function sync() {
-		echo ("<p>Synchronizing...</p>");
+		//echo ("<p>Synchronizing...</p>");
 
-		$this->skillQueue = $this->getSkillQueue();
+		//$this->skillQueue = $this->getSkillQueue();
 
-		$this->characterSheet = $this->getCharacterSheet();
+		//$this->characterSheet = $this->getCharacterSheet();
 
-		$this->standings = $this->getStandings();
+		//$this->standings = $this->getStandings();
 
-		$this->notifications = $this->getNotifications();
+		//$this->notifications = $this->getNotifications();
 
 		$this->accountBalance = $this->getAccountBalance();
-		$this->walletJournal = $this->getWalletJournal();
-		$this->walletTransactions = $this->getWalletTransactions();
+		//$this->walletJournal = $this->getWalletJournal();
+		//$this->walletTransactions = $this->getWalletTransactions();
 
-		$this->assets = $this->getAssets();
+		//$this->assets = $this->getAssets();
 
-		$this->calendarEvents = $this->getCalendarEvents();
+		//$this->calendarEvents = $this->getCalendarEvents();
 
-		$this->contracts = $this->getContracts();
-		$this->auctions = $this->getAuctions();
+		//$this->contracts = $this->getContracts();
+		//$this->auctions = $this->getAuctions();
 
-		$this->industryJobs = $this->getIndustryJobs();
+		//$this->industryJobs = $this->getIndustryJobs();
 
-		$this->research = $this->getResearch();
+		//$this->research = $this->getResearch();
 
-		$this->mailHeaders = $this->getMailHeaders();
+		//$this->mailHeaders = $this->getMailHeaders();
 
-		$this->marketOrders = $this->getMarketOrders();
+		//$this->marketOrders = $this->getMarketOrders();
 
-		$this->contacts = $this->getContacts();
+		//$this->contacts = $this->getContacts();
 
-		$this->watchList = $this->getWatchList();
+		//$this->watchList = $this->getWatchList();
 
 		return true;
 	}

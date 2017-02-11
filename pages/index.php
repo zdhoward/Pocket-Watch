@@ -1,7 +1,11 @@
 <?php
-  include("library.php");
-  //include("classes.php");
-  $player = refreshAPI();
+include("library.php");
+include("classes/Server.php");
+include("classes/User.php");
+include("classes/API.php");
+include("classes/Character.php");
+
+$user = new User();
 ?>
 <html lang="en">
   <head>
@@ -317,8 +321,11 @@
                   <div class="x_content">
                     <ul>
                       <?php
-                        for ($i = 0; $i < 3; $i++) {
-                          echo ("<li>" . $player[$i]['character']['name'] . ": " . getAccountBalance($player[$i]['character']['id']) . "</li>");
+                        for ($j = 0; $j < count($user->APIs); $j++) {
+                          for ($i = 0; $i < 3; $i++) {
+                            echo ("<li>" . $user->APIs[$j]->characters->row[$i]['name'] . ": " . getAccountBalance($user->APIs[0]->characters->row[$i]['characterID']) . "</li>");
+                            //debugDump($user->APIs[0]->characters->row[$i]);
+                          }
                         }
                       ?>
                     </ul>
