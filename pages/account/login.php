@@ -43,6 +43,8 @@
         $server_address = $_SERVER['REMOTE_ADDR'];
         $http_agent = $_SERVER['HTTP_USER_AGENT'];
 
+        //$_SESSION = new User($username);
+
         //$connection = new mysqli("localhost", $credentials['dbUser'], $credentials['dbPass'], "pocketwatch");
 
         //debugDump($connection);

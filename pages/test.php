@@ -24,8 +24,8 @@
 
   // new User($username, $hashedPassword)
   $user = new User("obdo");
-  //debugDump($user);
-  echo ($_SESSION['username']);
+  debugDump($user);
+  //echo ($_SESSION['username']);
 
   echo ("<p>------- USER END -------</p>");
 
