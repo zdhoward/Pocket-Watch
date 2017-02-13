@@ -7,7 +7,8 @@ require_once("classes/Character.php");
 
 require_once("account/authenticate.php");
 
-$user = new User();
+//$user = unserialize($_SESSION['user']);
+$user = new User($_SESSION['username']);
 ?>
 <html lang="en">
   <head>
