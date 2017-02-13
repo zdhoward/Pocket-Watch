@@ -44,7 +44,9 @@
         $http_agent = $_SERVER['HTTP_USER_AGENT'];
 
         $_SESSION['username'] = $username;
-        //$_SESSION['user'] = serialize(new User($username));
+
+        $user = new User($username);
+        //$_SESSION['user'] = json_encode($user);
 
         //$connection = new mysqli("localhost", $credentials['dbUser'], $credentials['dbPass'], "pocketwatch");
 

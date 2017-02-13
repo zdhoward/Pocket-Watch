@@ -25,6 +25,11 @@
   // new User($username, $hashedPassword)
   $user = new User("obdo");
   //debugDump($user);
+  //$serialize = json_encode($user);
+  //echo($serialize);
+
+  //$unserialize = json_decode($serialize);
+  //debugDump($unserialize);
   //echo ($_SESSION['username']);
 
   echo ("<p>------- USER END -------</p>");
