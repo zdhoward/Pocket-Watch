@@ -1,9 +1,11 @@
 <?php
-include("library.php");
-include("classes/Server.php");
-include("classes/User.php");
-include("classes/API.php");
-include("classes/Character.php");
+require_once("library.php");
+require_once("classes/Server.php");
+require_once("classes/User.php");
+require_once("classes/API.php");
+require_once("classes/Character.php");
+
+require_once("account/authenticate.php");
 
 $user = new User();
 ?>

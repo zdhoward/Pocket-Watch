@@ -5,7 +5,7 @@ class User {
 	var $accessMask; // Check if you can query something before you do it
 	var $APIs = array();
 
-	function __construct() {
+	function __construct($username) {
 		//TODO Login User to secure db and retrieve API info
 		//TODO Load keyID from db
 		//TODO Load vCode from db
@@ -33,6 +33,10 @@ class User {
 		}
 
 		return true;
+	}
+
+	function getAPIs() {
+		
 	}
 };
 ?>

@@ -23,7 +23,9 @@
   echo ("<p>---------- USER ----------</p>");
 
   // new User($username, $hashedPassword)
-  $user = new User();
+  $user = new User("obdo");
+  //debugDump($user);
+  echo ($_SESSION['username']);
 
   echo ("<p>------- USER END -------</p>");
 

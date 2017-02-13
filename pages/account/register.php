@@ -29,7 +29,7 @@
         die('There was an error running the query [' . $db->error . ']');
       }
 
-      echo ($_POST['username'] . " has now been added as a new user");
+      //echo ($_POST['username'] . " has now been added as a new user");
 
       header("Location: login.php");
       die();
