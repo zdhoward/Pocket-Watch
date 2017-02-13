@@ -8,7 +8,7 @@ require_once("classes/Character.php");
 require_once("account/authenticate.php");
 
 //$user = unserialize($_SESSION['user']);
-$user = json_decode($_SESSION['user']);
+//$user = json_decode($_SESSION['user']);
 $user = new User($_SESSION['username']);
 ?>
 <html lang="en">

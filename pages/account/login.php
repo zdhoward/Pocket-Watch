@@ -45,7 +45,7 @@
 
         $_SESSION['username'] = $username;
 
-        $user = new User($username);
+        //$user = new User($username);
         //$_SESSION['user'] = json_encode($user);
 
         //$connection = new mysqli("localhost", $credentials['dbUser'], $credentials['dbPass'], "pocketwatch");
