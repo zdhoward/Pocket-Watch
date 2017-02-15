@@ -5,7 +5,7 @@ include_once("assets/.credentials");
 class User {
 
 	var $mainCharacterID;
-	var $accessMask; // Check if you can query something before you do it
+	//var $accessMask; // Check if you can query something before you do it
 	var $APIs = array();
 
 	function __construct($username) {

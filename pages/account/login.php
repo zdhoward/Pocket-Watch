@@ -2,6 +2,7 @@
   include_once("../assets/.credentials");
   include_once("assets/.credentials");
   include_once("../classes/User.php");
+  include_once("classes/User.php");
 
   function debugDump($array) {
     printf("print_r():<pre>%s</pre>", print_r($array, TRUE));
@@ -37,6 +38,11 @@
         //header("Location: ../index.php");
         //die();
 
+        //unset($_SESSION['username']);
+        //unset($_SESSION['user']);
+        //unset($_SESSION['new']);
+
+        session_unset();
         session_start();
   			$session_key = session_id();
         $username = $_POST['username'];
@@ -44,9 +50,11 @@
         $http_agent = $_SERVER['HTTP_USER_AGENT'];
 
         $_SESSION['username'] = $username;
+        $_SESSION['session_key'] = $session_key;
+
 
         //$user = new User($username);
-        //$_SESSION['user'] = json_encode($user);
+        //$_SESSION['new'] = serialize(new User("obdo"));
 
         //$connection = new mysqli("localhost", $credentials['dbUser'], $credentials['dbPass'], "pocketwatch");
 
@@ -67,8 +75,10 @@
         }
 
         //debugDump($sql);
+        //session_unset();
 
   			header('Location: ../index.php');
+        //debugDump($_SESSION);
         die();
       } else {
         echo ("This user/password combination is incorrect");

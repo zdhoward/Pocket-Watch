@@ -7,9 +7,25 @@ require_once("classes/Character.php");
 
 require_once("account/authenticate.php");
 
+//start_session();
+
 //$user = unserialize($_SESSION['user']);
 //$user = json_decode($_SESSION['user']);
-$user = new User($_SESSION['username']);
+//$user = new User($_SESSION['username']);
+//debugDump($user->APIs[0]->characters->row[0]['name']);
+//$u2 = json_decode($_SESSION['user']);
+//unset($_SESSION['new']);
+//debugDump($_SESSION);
+
+$_SESSION['user'] = new User($_SESSION['username']);
+
+/*
+if (!isset($_SESSION['user'])) {
+  $_SESSION['user'] = new User($_SESSION['username']);
+}
+*/
+
+debugDump($_SESSION['user']->APIs[0]->characters->row[0]);
 ?>
 <html lang="en">
   <head>
@@ -19,7 +35,7 @@ $user = new User($_SESSION['username']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Pocket Watch | <?php echo($player[0]['character']['name']); ?></title>
+    <title>Pocket Watch | <?php echo($_SESSION['user']->APIs[0]->characters->row[0]['name']); ?></title>
 
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -50,7 +66,7 @@ $user = new User($_SESSION['username']);
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
-                <h2><?php echo($player[0]['character']['name']); ?></h2>
+                <h2><?php echo($_SESSION['user']->APIs[0]->characters->row[0]['name']); ?></h2>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -192,7 +208,7 @@ $user = new User($_SESSION['username']);
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="http://image.eveonline.com/Character/94816250_128.jpg" alt=""><?php echo($player[0]['character']['name']); ?>
+                    <img src="http://image.eveonline.com/Character/94816250_128.jpg" alt=""><?php echo($_SESSION['user']->APIs[0]->characters->row[0]['name']); ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -211,7 +227,7 @@ $user = new User($_SESSION['username']);
                 <li role="presentation" class="dropdown">
                   <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                     <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
+                    <span class="badge bg-green"><?php echo("6"); ?></span>
                   </a>
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                     <li>
@@ -325,9 +341,9 @@ $user = new User($_SESSION['username']);
                   <div class="x_content">
                     <ul>
                       <?php
-                        for ($j = 0; $j < count($user->APIs); $j++) {
+                        for ($j = 0; $j < count($_SESSION['user']->APIs); $j++) {
                           for ($i = 0; $i < 3; $i++) {
-                            echo ("<li>" . $user->APIs[$j]->characters->row[$i]['name'] . ": " . getAccountBalance($user->APIs[0]->characters->row[$i]['characterID']) . "</li>");
+                            echo ("<li>" . $_SESSION['user']->APIs[$j]->characters->row[$i]['name'] . ": " . getAccountBalance($_SESSION['user']->APIs[0]->characters->row[$i]['characterID']) . "</li>");
                             //debugDump($user->APIs[0]->characters->row[$i]);
                           }
                         }

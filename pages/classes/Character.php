@@ -172,6 +172,15 @@ class Character {
 		return $notifications;
 	}
 
+	function getNotificationCount() {
+
+		$xml = simplexml_load_file("$this->URItarget/char/Notifications.xml.aspx?keyID=$this->keyID&vCode=$this->vCode&characterID=$this->ID");
+
+		$notifications = $xml->result->rowset;
+
+		return count($notifications);
+	}
+
 	function getAccountBalance() {
 
 		$xml = simplexml_load_file("$this->URItarget/char/AccountBalance.xml.aspx?keyID=$this->keyID&vCode=$this->vCode&characterID=$this->ID");
