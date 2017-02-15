@@ -23,7 +23,15 @@
   echo ("<p>---------- USER ----------</p>");
 
   // new User($username, $hashedPassword)
-  $user = new User();
+  //$user = new User("obdo");
+  //debugDump($user);
+  //$_SESSION['user'] = json_encode($user);
+  //echo($serialize);
+
+  //$unserialize = json_decode($_SESSION['user']);
+  //debugDump($unserialize);
+  //echo ($_SESSION['username']);
+  //session_unset();
 
   echo ("<p>------- USER END -------</p>");
 
